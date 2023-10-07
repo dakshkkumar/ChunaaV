@@ -1,2 +1,2 @@
-s = ttk.Style()
-# s.theme_use('clam')
+test=Button(votingRoot,text='try2',command=testdes)
+        # test.place(relx=0.1,rely=0.8)
