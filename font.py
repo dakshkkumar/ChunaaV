@@ -7,7 +7,7 @@ v=Scrollbar(root,orient='vertical')
 poy=0.01
 pox=0.01
 count=0
-for x in list:
+for x in list[90:]:
     y=ttk.Label(root,text=x,font=(x,12))
     y.place(relx=pox,rely=poy)
     poy+=0.05
