@@ -116,8 +116,11 @@ def voter():
 
     Button(voterRoot, text='Done', command=done,width=15,height=1,font=('Impact',20),pady=0,fg='#EA3323',bg='white').place(relx=0.8, rely=0.45,anchor=CENTER)
 
-    Button(voterRoot, text='Back', command=voterRoot.destroy).place(
-        relx=0.9, rely=0.02)
+    backImg=PhotoImage(file='backImage.png')
+    Button(voterRoot, image=backImg, command=voterRoot.destroy,border=0,pady=0,padx=0,activebackground=None).place(
+        relx=0.95, rely=0.05,anchor=CENTER)
+    
+
     voterRoot.attributes('-fullscreen', True)
     voterRoot.configure(bg='#3AAFA9')
     voterRoot.mainloop()

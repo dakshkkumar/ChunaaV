@@ -6,7 +6,8 @@ import votingPage
 
 
 def runStudent(id):
-    studentRoot = Tk()
+    global studentRoot
+    studentRoot = Toplevel()
 
     with open('StuData.csv') as studentDetails:
         students = csv.reader(studentDetails)
@@ -43,14 +44,14 @@ a smooth and fair voting process:''', font=('Small Fonts', 15), justify='left', 
         students = csv.reader(studentDetails)
         for data in students:
             if data[0] == str(id):
-                if data[3] == 'TRUE':
+                if data[3] == 'True':
                     Button(studentRoot, text='GO!', command=None, state=DISABLED, font=(
                         'Small Fonts', 30), pady=0).place(relx=0.45, rely=0.8)
                     Label(studentRoot, text='''**Looks like you've
 ALREADY voted.**''', font=('Small Fonts', 15), bg='#3AAFA9', fg='red', justify='left').place(relx=0.55, rely=0.81)
                 else:
                     Button(studentRoot, text='GO!', command=lambda: votingPage.votingData(
-                        0), font=('Small Fonts', 30), pady=0).place(relx=0.45, rely=0.8)
+                        id,studentRoot), font=('Small Fonts', 30), pady=0).place(relx=0.45, rely=0.8)
                     Label(studentRoot, text='''<--Click here
 to vote''', font=('Small Fonts', 15), bg='#3AAFA9', fg='green', justify='left').place(relx=0.55, rely=0.81)
                 break
@@ -59,4 +60,3 @@ to vote''', font=('Small Fonts', 15), bg='#3AAFA9', fg='green', justify='left').
     studentRoot.mainloop()
 
 
-runStudent(1231)

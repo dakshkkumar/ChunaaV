@@ -39,7 +39,6 @@ def addAnother():
 
 def done():
     global newCandidates
-    global candRoot
 
     candidateFile = open('CandData.csv', 'a', newline='')
     stuDetails=pd.read_csv('StuData.csv')
@@ -88,6 +87,7 @@ def candidate():
     global cand1
     global cand2
     global canvas
+    global candRoot
 
     candRoot = Toplevel()
     voterBg = PhotoImage(file='candBg.png')
@@ -100,7 +100,7 @@ def candidate():
 
     canvas.create_text(480, 150, text='POSITION:',
                         fill='blue', font=('Helvetica', 20))
-    position = Entry(candRoot, fg='white', bg='grey', width=30, border=0,
+    position = Entry(candRoot, fg='white', bg='#adadc9', width=30, border=0,
                     font=('Microsoft YaHei UI Light', 25))
     position.place(relx=0.5, rely=0.265, anchor=CENTER)
 
@@ -123,8 +123,9 @@ def candidate():
 
     Button(candRoot, text='Done', command=done,width=15,height=1,font=('Impact',20),pady=0,fg='#EA3323',bg='white').place(relx=0.6, rely=0.8,anchor=CENTER)
 
-    Button(candRoot, text='Back', command=candRoot.destroy).place(
-        relx=0.9, rely=0.02)
+    backImg=PhotoImage(file='backImage.png')
+    Button(candRoot, image=backImg, command=candRoot.destroy,border=0,pady=0,padx=0,activebackground=None).place(
+        relx=0.95, rely=0.05,anchor=CENTER)
     candRoot.attributes('-fullscreen', True)
     candRoot.configure(bg='#3AAFA9')
     candRoot.mainloop()
