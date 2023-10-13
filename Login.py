@@ -21,12 +21,17 @@ def Login():
     studentDetails=pd.read_csv("StuData.csv")
     studentDetails.set_index("AdNo", inplace=True)
 
+    # errorLabel=Label(root,text='',bg='#3AAFA9')
+    # errorLabel.place(relx=0.73,rely=0.70,anchor=CENTER)
+
     if user.get() == 'admin' and passw.get() == '12345':
         teacher.runTeacher()
     elif user.get().isnumeric() and int(user.get()) in range(1000,10000) and studentDetails.loc[int(user.get())]['Password']==passw.get():
         student.runStudent(int(user.get()))
     else:
-        Label(root,text='*Uh oh! Invalid username or password!*',fg='red',font=(20),bg='#3AAFA9').place(relx=0.73,rely=0.70,anchor=CENTER)
+        errorLabel=Label(root,text='*Uh oh! Invalid username or password!*',fg='red',font=(20),bg='#3AAFA9')
+        errorLabel.place(relx=0.73,rely=0.70,anchor=CENTER)
+        root.after(2000,errorLabel.destroy)
         
 
 

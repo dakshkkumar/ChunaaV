@@ -52,7 +52,7 @@ def result():
 
     allWinners = Frame(resultRoot)
     allWinners.pack()
-    Label(resultRoot, text='All Winners!', font=('Britannic Bold', 40), bg='#3AAFA9', fg='gold').place(
+    Label(resultRoot, text='School Council!', font=('Britannic Bold', 40), bg='#3AAFA9', fg='gold').place(
         relx=0.5, rely=0.07, anchor=CENTER)
 
     s = ttk.Style()
@@ -116,4 +116,3 @@ def result():
     resultRoot.attributes('-fullscreen', True)
     resultRoot.configure(bg='#3AAFA9')
     resultRoot.mainloop()
-

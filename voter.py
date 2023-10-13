@@ -30,8 +30,9 @@ def addAnother():
         AdNo.delete(0, 'end')
         name.delete(0, 'end')
     else:
-        canvas.create_text(
+        error=canvas.create_text(
             680, 400, text='*Invalid Entry*', fill='red', font=('Helvetica', 15))
+        voterRoot.after(2000,canvas.delete,error)
         AdNo.delete(0, 'end')
         name.delete(0, 'end')
 

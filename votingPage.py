@@ -13,23 +13,22 @@ def thank(chosen):
     votingRoot.destroy()
     chosenRoot = Toplevel()
     chosenBg = PhotoImage(file='casted.png')
+    thankBg=PhotoImage(file='thankImage.png')
 
     canvas = Canvas(chosenRoot)
-    canvas.create_image(0, 0, image=chosenBg, anchor=NW)
-    canvas.create_text(640, 310, text=chosen, fill='black',
-                       font=('Lucida Handwriting', 25),angle='37')
+    image=canvas.create_image(0, 0, image=chosenBg, anchor=NW)
+    textBox=canvas.create_text(640, 310, text=chosen, fill='black',
+                        font=('Lucida Handwriting', 25),angle='37')
+        
+    chosenRoot.after(1000,canvas.delete,image)
+    chosenRoot.after(1000,lambda:(canvas.create_image(0, 0, image=thankBg, anchor=NW)))
+    chosenRoot.after(1000,lambda: canvas.itemconfig(textBox,text='Thank you',font=('Britannic Bold',30),angle=0))
     canvas.pack(fill='both', expand=True)
     chosenRoot.attributes('-fullscreen', True)
     chosenRoot.configure(bg='#3AAFA9')
-    chosenRoot.after(1000, chosenRoot.destroy)
+    chosenRoot.after(3500, chosenRoot.destroy)
     chosenRoot.mainloop()
 
-
-    # thankRoot=Toplevel()
-    # Label(thankRoot,text='Thank You!').place(relx=0.5,rely=0.5)
-    # thankRoot.attributes('-fullscreen', True)
-    # thankRoot.configure(bg='#3AAFA9')
-    # thankRoot.mainloop()
 
 
 def casted(chosen):
@@ -135,4 +134,3 @@ def votingData(id,root):
     votingRoot.attributes('-fullscreen', True)
     votingRoot.configure(bg='#3AAFA9')
     votingRoot.mainloop()
-

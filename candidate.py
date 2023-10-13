@@ -19,7 +19,6 @@ def addAnother():
     global canvas
 
     stuDetails=pd.read_csv('StuData.csv')
-    print(cand1.get())
     if (int(cand1.get()) in stuDetails['AdNo'].tolist() and int(cand2.get()) in stuDetails['AdNo'].tolist()):
         current = []
         current.append(position.get())
@@ -32,7 +31,8 @@ def addAnother():
         position.delete(0, 'end')
     else:
         error=canvas.create_text(
-            680, 400, text='*Invalid Entry*', fill='red', font=('Helvetica', 15))
+            680, 530, text='*Invalid Entry*', fill='red', font=('Helvetica', 15))
+        candRoot.after(2000,canvas.delete,error)
         position.delete(0, 'end')
     cand1.delete(0, 'end')
     cand2.delete(0, 'end')
