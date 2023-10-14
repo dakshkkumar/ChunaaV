@@ -36,9 +36,9 @@ a smooth and fair voting process:''', font=('Small Fonts', 15), justify='left', 
     Label(studentRoot, text='''Thank You for participating in our school's democratic process!''', font=(
         'Small Fonts', 20), justify='left', border=0, pady=0, bg='#3AAFA9', fg='green').place(relx=0.03, rely=0.69)
 
-    quit = Button(studentRoot, text="Logout",
-                  command=studentRoot.destroy)
-    quit.place(relx=0.9, rely=0.02)
+    # quit = Button(studentRoot, text="Logout",
+    #               command=studentRoot.destroy)
+    # quit.place(relx=0.9, rely=0.02)
 
     with open('StuData.csv') as studentDetails:
         students = csv.reader(studentDetails)

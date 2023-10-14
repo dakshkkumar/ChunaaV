@@ -22,7 +22,7 @@ def thank(chosen):
         
     chosenRoot.after(1000,canvas.delete,image)
     chosenRoot.after(1000,lambda:(canvas.create_image(0, 0, image=thankBg, anchor=NW)))
-    chosenRoot.after(1000,lambda: canvas.itemconfig(textBox,text='Thank you',font=('Britannic Bold',30),angle=0))
+    #chosenRoot.after(1000,lambda: canvas.itemconfig(textBox,text='Thank you',font=('Britannic Bold',30),angle=0))
     canvas.pack(fill='both', expand=True)
     chosenRoot.attributes('-fullscreen', True)
     chosenRoot.configure(bg='#3AAFA9')
@@ -128,8 +128,8 @@ def votingData(id,root):
             votingRoot, text=studentDetails.loc[int(candidates[i][3])]['Name'], command=lambda: change(i+1, 4),bg='#fcd232',border=0, font=('Impact',20),cursor='hand2',activebackground='#fcd232')
         cand2.place(relx=0.6, rely=0.17, anchor=CENTER)
 
-    quit = Button(votingRoot, text="Logout", command=votingRoot.destroy)
-    quit.place(relx=0.9, rely=0.02)
+    # quit = Button(votingRoot, text="Logout", command=votingRoot.destroy)
+    # quit.place(relx=0.9, rely=0.02)
 
     votingRoot.attributes('-fullscreen', True)
     votingRoot.configure(bg='#3AAFA9')

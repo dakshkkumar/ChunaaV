@@ -42,7 +42,7 @@ Frame(root, width=330, height=3, bg='black').place(
 
 img = PhotoImage(file='login.png')
 Label(root, image=img, bg='#3AAFA9').place(relx=0.06, rely=0.18)
-Button(root, text='exit', command=root.destroy).place(relx=0.9, rely=0.05)
+#Button(root, text='exit', command=root.destroy).place(relx=0.9, rely=0.05)
 
 Label(root, text='Sign In', fg='white', bg='#3AAFA9', font=(
     'Microsoft YaHei UI Light', 23, 'bold')).place(relx=0.72, rely=0.31,anchor=CENTER)
